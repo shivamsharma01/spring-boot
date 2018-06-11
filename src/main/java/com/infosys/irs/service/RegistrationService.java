@@ -1,18 +1,9 @@
 package com.infosys.irs.service;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.infosys.irs.entity.UserEntity;
-import com.infosys.irs.exception.InvalidCityException;
-import com.infosys.irs.exception.InvalidEmailException;
-import com.infosys.irs.exception.InvalidNameException;
-import com.infosys.irs.exception.InvalidPasswordException;
-import com.infosys.irs.exception.InvalidPhoneException;
-import com.infosys.irs.exception.InvalidUserIdException;
 import com.infosys.irs.exception.UserIdAlreadyPresentException;
 import com.infosys.irs.model.User;
 import com.infosys.irs.repository.UserRepository;

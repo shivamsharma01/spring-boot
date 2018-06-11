@@ -8,7 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.infosys.irs.exception.UserIdAlreadyPresentException;
@@ -23,10 +25,12 @@ public class RegistrationController {
 	@Autowired
 	private RegistrationService registrationService;
 
+	@GetMapping(value = "/register")
 	public ModelAndView register(Model model) {
 		return new ModelAndView("register", "command", new User());
 	}
 
+	@PostMapping(value = "/registerUser")
 	public ModelAndView addCustomer(@Valid @ModelAttribute("command") User user, BindingResult result, ModelMap map) {
 		ModelAndView modelAndView = null;
 		if (result.hasErrors()) {

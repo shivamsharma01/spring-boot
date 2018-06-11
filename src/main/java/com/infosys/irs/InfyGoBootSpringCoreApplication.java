@@ -6,7 +6,6 @@ import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
 @PropertySource(value = { "classpath:configuration.properties" })
-
 public class InfyGoBootSpringCoreApplication {
 
 	public static void main(String[] args) {
