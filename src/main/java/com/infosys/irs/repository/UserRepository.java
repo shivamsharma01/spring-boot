@@ -1,13 +1,11 @@
 package com.infosys.irs.repository;
 
-import org.springframework.stereotype.Component;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import com.infosys.irs.model.User;
+import com.infosys.irs.entity.UserEntity;
 
-@Component
-public class UserRepository {
+@Repository
+public interface UserRepository extends JpaRepository<UserEntity, String> {
 
-	public String registerUser(User user) {
-		return "UserRepository.REGISTRATION_SUCCESS";
-	}
 }

@@ -1,24 +1,20 @@
-package com.infosys.irs.model;
+package com.infosys.irs.entity;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class User {
-	@NotNull(message = "UserId must not be blank.")
-	@Size(min = 4, max = 15, message = "UserId must be between 4 to 15 characters.")
+@Entity
+@Table(name = "USER_DETAILS")
+public class UserEntity {
+	@Id
+	@Column(name = "userid")
 	private String userId;
-	@NotNull(message = "Password must not be blank.")
-	@Size(min = 8, max = 15, message = "Password must be between 8 to 15 characters")
 	private String password;
-	@NotNull(message = "Name must not be blank.")
-	@Size(min = 4, max = 15, message = "Name must be between 4 to 15 characters.")
 	private String name;
-	@NotNull(message = "City must not be blank")
 	private String city;
-	@NotNull(message = "Email must not be blank.")
 	private String email;
-	@NotNull(message = "PhoneNumber must not be blank.")
-	@Size(min = 10, max = 10, message = "PhoneNumber must be 10 digits.")
 	private String phone;
 
 	public String getUserId() {
