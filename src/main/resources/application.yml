@@ -1,0 +1,46 @@
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/pages/
+      suffix: .jsp
+  profiles:
+    active: dev
+logging:
+  file: Errorlog.log
+  level:
+    root: WARN
+    com.infosys.ars: ERROR
+  pattern:
+    file: '%d{yyyy-MM-dd HH:mm:ss,SSS} %5p [%t] %c [%M] - %m%n'
+server:
+  servlet:
+    contextPath: /InfyGoBoot
+  port: 4343
+
+---
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_irs
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    database: MYSQL
+    hibernate:
+      ddl-auto: none
+
+---
+
+spring:
+  profiles: test
+  datasource:
+    url: jdbc:hsqldb:mem:scratchdb/db_irs
+    username: sa
+    password: null
+  jpa:
+    show-sql: true
