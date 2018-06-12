@@ -1,5 +1,6 @@
 package com.infosys.irs.model;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -16,7 +17,7 @@ public class User {
 	@NotNull(message = "City must not be blank")
 	private String city;
 	@NotNull(message = "Email must not be blank.")
-	private String email;
+	@Email private String email;
 	@NotNull(message = "PhoneNumber must not be blank.")
 	@Size(min = 10, max = 10, message = "PhoneNumber must be 10 digits.")
 	private String phone;
